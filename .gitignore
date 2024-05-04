@@ -1,0 +1,4 @@
+*.pyc
+kaldi_model*/*
+kaldi_tmp*/*
+config.py
