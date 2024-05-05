@@ -6,7 +6,7 @@ I'm currently developing a custom grammar/rule set, starting from https://github
 
 As I progress, I plan to significantly modify these bases to create a personalized speech recognition system. I may also look at/incorporate projects such as https://github.com/dictation-toolbox/Caster.
 
-I initially would like to have most of the functionality from my window speech recognition macros set up. 
+I initially would like to have most of the functionality from https://github.com/amirf147/wsrmacros set up. 
 
 > **Note:** Please note that this repository, in its current state, is not intended to be cloned and used. It currently serves as a place for me to document my progress. For example, I'm not using different branches; I just have a single main branch. I have two loaders here and there may be extra files. It might be a bit messy now, but I plan to clean it up later and make it more user-friendly. Currently, I'm still trying to put things together and get a working basis.
 
