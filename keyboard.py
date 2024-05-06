@@ -242,21 +242,23 @@ grammarCfg = Config("multi edit")
 grammarCfg.cmd = Section("Language section")
 grammarCfg.cmd.map = Item(
     {
+        # Mouse click key that executes mouse click from AutoHotkey script
+        "yep":  Key("c-f9"),
         # Navigation keys.
         "up [<n>]": Key("up:%(n)d"),
         "down [<n>]": Key("down:%(n)d"),
         "left [<n>]": Key("left:%(n)d"),
         "right [<n>]": Key("right:%(n)d"),
-        "page up [<n>]": Key("pgup:%(n)d"),
-        "page down [<n>]": Key("pgdown:%(n)d"),
+        "(page up|moss) [<n>]": Key("pgup:%(n)d"),
+        "(lis|page down) [<n>]": Key("pgdown:%(n)d"),
         #"up <n> (page|pages)": Key("pgup:%(n)d"),
         #"down <n> (page|pages)": Key("pgdown:%(n)d"),
         #"left <n> (word|words)": Key("c-left/3:%(n)d/10"),
         #"right <n> (word|words)": Key("c-right/3:%(n)d/10"),
-        "home": Key("home"),
-        "end": Key("end"),
-        "doc home": Key("c-home/3"),
-        "doc end": Key("c-end/3"),
+        "(homer|home)": Key("home"),
+        "(sequel|end)": Key("end"),
+        "(topper|doc home)": Key("c-home/3"),
+        "(south|doc end)": Key("c-end/3"),
         # Functional keys.
         "space": release + Key("space"),
         "space [<n>]": release + Key("space:%(n)d"),
@@ -288,7 +290,7 @@ grammarCfg.cmd.map = Item(
         #"quotes": Key("dquote/3, dquote/3, left/3"),
         #"backticks": Key("backtick:2, left"),
         #"single quotes": Key("squote, squote, left/3"),
-        "squiggle": Text("~"),
+        "tilde": Text("~"),
         "backtick": Key("backtick"),
         # Shorthand multiple characters.
         "double <char>": Text("%(char)s%(char)s"),
