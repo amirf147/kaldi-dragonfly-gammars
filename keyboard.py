@@ -48,16 +48,16 @@ def cancel_and_sleep(text=None, text2=None):
 
 # For repeating of characters.
 specialCharMap = {
-    "(bar|vertical bar|pipe)": "|",
+    "(pipe)": "|",
     "(dash|minus|hyphen)": "-",
-    "dit": ".",
+    "dot": ".",
     "comma": ",",
     "backslash": "\\",
     "underscore": "_",
     "(star|asterisk)": "*",
     "colon": ":",
     "(semicolon|semi colon)": ";",
-    #"at": "@",
+    "at": "@",
     "location": "@",
     "[double] quote": '"',
     "single quote": "'",
@@ -124,30 +124,30 @@ singleModifierMap = {
 letterMap = {
     "(alpha|arch)": "a",
     "(bravo|brav) ": "b",
-    "(charlie|turley|char) ": "c",
+    "(charlie) ": "c",
     "(delta)": "d",
-    "(echo|every) ": "e",
-    "(foxtrot|fox) ": "f",
-    "(golf|gang) ": "g",
+    "(echo)": "e",
+    "(foxtrot) ": "f",
+    "(golf) ": "g",
     "(hotel) ": "h",
     "(india|indigo) ": "i",
     "(juliet|julia) ": "j",
     "(kilo) ": "k",
-    "(lima|line) ": "l",
+    "(lima) ": "l",
     "(mike) ": "m",
     "(november) ": "n",
     "(Oscar|osh) ": "o",
     "(papa|poppa) ": "p",
-    "(quebec|queen) ": "q",
+    "(quebec) ": "q",
     "(romeo) ": "r",
     "(sierra) ": "s",
-    "(tango|tarnish) ": "t",
+    "(tango) ": "t",
     "(uniform) ": "u",
     "(victor) ": "v",
     "(whiskey) ": "w",
     "(x-ray) ": "x",
     "(yankee) ": "y",
-    "(zulu|zipper) ": "z",
+    "(zulu) ": "z",
 }
 #letterMap = {
     #"(alpha|arch)": "a",
@@ -288,8 +288,10 @@ grammarCfg.cmd.map = Item(
         "switchback": release + Key("a-tab/3"),
         
         #"paste [that]": Function(paste_command),
-        #"copy [that]": Function(copy_command),
+        # "copy [that]": Function(copy_command),
         "cut [that]": release + Key("c-x/3"),
+        "copy [that]": release + Key("c-c/3"),
+        "paste [that]": release + Key("c-v/3"),
         "select all": release + Key("c-a/3"),
         "[(hold|press)] alt": Key("alt:down/3"),
         "[(hold|press)] angry": Key("alt:down/3"),
@@ -299,7 +301,7 @@ grammarCfg.cmd.map = Item(
         "[(hold|press)] control": Key("ctrl:down/3"),
         "release control": Key("ctrl:up"),
         "release [all]": release,
-        "press key <pressKey>": Key("%(pressKey)s"),
+        "press [key] <pressKey>": Key("%(pressKey)s"),
         # Closures.
         #"angle brackets": Key("langle, rangle, left/3"),
         #"[square] brackets": Key("lbracket, rbracket, left/3"),
@@ -309,7 +311,7 @@ grammarCfg.cmd.map = Item(
         #"backticks": Key("backtick:2, left"),
         #"single quotes": Key("squote, squote, left/3"),
         "tilde": Text("~"),
-        "backtick": Key("backtick"),
+        "(backquote|backtick)": Key("backtick"),
         # Shorthand multiple characters.
         "double <char>": Text("%(char)s%(char)s"),
         "triple <char>": Text("%(char)s%(char)s%(char)s"),
@@ -338,7 +340,8 @@ grammarCfg.cmd.map = Item(
         #'(raip|ren|wren) [<n>]':   Key('rparen:%(n)d'),
         '(ren|wren) [<n>]':   Key('rparen:%(n)d'),
 
-        "act [<n>]": Key("escape:%(n)d"),
+        "cancel [<n>]": Key("escape:%(n)d"),
+        # "act [<n>]": Key("escape:%(n)d"),
         "calm [<n>]": Key("comma:%(n)d"),
         'tunnel': Key('space,bar,space'),
         # 'care':        Key('home'),
@@ -393,5 +396,4 @@ class KeystrokeRule(MappingRule):
     defaults = {
         "n": 1,
     }
-
 
