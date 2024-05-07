@@ -1,4 +1,4 @@
-# kaldi-dragonfly-rules
+# kaldi-dragonfly-grammars
 
 ## Current Status and Plans
 
