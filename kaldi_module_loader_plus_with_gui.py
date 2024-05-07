@@ -126,15 +126,15 @@ def try_prevent_window_activation_on_windows(tk_root):
     res = SetWindowPos(
         hwnd,
         0,
+        1700,  # X coordinate
+        600,   # Y coordinate
         0,
         0,
-        0,
-        0,
-        SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_FRAMECHANGED | SWP_NOACTIVATE,
+        SWP_NOSIZE | SWP_NOZORDER | SWP_FRAMECHANGED | SWP_NOACTIVATE,
     )
+    print("replaced window pos result", res)
     err = ctypes.get_last_error()
     print("last error", err)
-    print("replaced window pos result", res)
 
 
 class FakeStringVar:
@@ -212,7 +212,7 @@ class App(threading.Thread):
         self.root.protocol("WM_DELETE_WINDOW", self._on_window_close)
 
         self.status_line_var = self.status_line_var.upgrade()
-        label = ttk.Label(self.root, textvariable=self.status_line_var)
+        label = ttk.Label(self.root, textvariable=self.status_line_var, font=("Arial", 7), wraplength=60)
         label.grid(column=0, row=0, sticky="nw")
 
         self.last_heard_var = self.last_heard_var.upgrade()
@@ -220,14 +220,19 @@ class App(threading.Thread):
         label.grid(column=1, row=0, sticky="nw")
 
         self.context_var = self.context_var.upgrade()
-        label = ttk.Label(self.root, textvariable=self.context_var)
+        label = ttk.Label(self.root, textvariable=self.context_var, wraplength=60, font=("Arial", 7))
         label.grid(column=0, row=1, columnspan=2, sticky="nw")
 
         self.root.attributes("-alpha", 0.8)  # transparency
         self.root.overrideredirect(True)  # hide the title bar
         self.root.wm_attributes("-topmost", 1)  # always on top
 
-        try_prevent_window_activation_on_windows(self.root)
+        # try_prevent_window_activation_on_windows(self.root)
+
+         # Set window position
+        x = 1858  # Desired X position
+        y = 600  # Desired Y position
+        self.root.geometry(f"+{x}+{y}")
 
         self.root.mainloop()
 
@@ -418,24 +423,26 @@ def main():
 
     # Define recognition callback functions.
     def on_begin():
-        ui.set_visual_context("last speech start", datetime.datetime.now())
+        # ui.set_visual_context("last speech start", datetime.datetime.now().time())
+        pass
 
     last_utterances = []
 
     def on_recognition(words):
         s = " ".join(words)
         if len(s):
-            ui.set_last_heard(f"Last heard: {s}")
-            last_utterances.append(s)
+            # ui.set_last_heard(f"Last heard: {s}")
+            last_utterances.insert(0, s)  # Insert at the beginning of the list
             while len(last_utterances) > MAX_DISPLAYED_HISTORY:
-                del last_utterances[0]
-            ui.set_visual_context("History", "\n" + "\n".join(last_utterances))
+                last_utterances.pop()  # Remove the last item from the list
+            ui.set_visual_context("", "\n\n".join(last_utterances))
         print("Recognized: %s" % " ".join(words))
 
     def on_failure():
-        ui.set_visual_context("last speech failure", datetime.datetime.now())
-
-    # Start the engine's main recognition loop
+        # ui.set_visual_context("last speech failure", datetime.datetime.now().time())
+        pass
+ 
+    # Start the engine's main recognnition loop
     engine.prepare_for_recognition()
     watchdog_observer = start_watchdog_observer(do_restart=restart_process)
     try:

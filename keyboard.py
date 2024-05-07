@@ -67,10 +67,10 @@ specialCharMap = {
     "ampersand": "&",
     "slash": "/",
     "equal": "=",
-    "plus": "+",
+    "plus sign": "+",
     "space": " ",
 
-    "bang": "!",
+    "exclamation point": "!",
     "question": "?",
     "caret": "^",
     # some other symbols I haven't imported yet, lazy sorry
@@ -135,7 +135,7 @@ letterMap = {
     "(kilo) ": "k",
     "(lima|line) ": "l",
     "(mike) ": "m",
-    "(november|noy) ": "n",
+    "(november) ": "n",
     "(Oscar|osh) ": "o",
     "(papa|poppa) ": "p",
     "(quebec|queen) ": "q",
@@ -211,7 +211,7 @@ controlKeyMap = {
     "(enter|return)": "enter",
     "escape": "escape",
     "tab": "tab",
-    "backspace": "backspace"
+    "backs": "backspace"
 }
 
 # F1 to F12. (do these actually work?)
@@ -251,6 +251,9 @@ grammarCfg.cmd.map = Item(
         "right [<n>]": Key("right:%(n)d"),
         "(page up|moss) [<n>]": Key("pgup:%(n)d"),
         "(lis|page down) [<n>]": Key("pgdown:%(n)d"),
+        "undo [<n>]": Key("c-z:%(n)d"),
+        "redo [<n>]": Key("c-y:%(n)d"),
+        "file save": Key("c-s"),
         #"up <n> (page|pages)": Key("pgup:%(n)d"),
         #"down <n> (page|pages)": Key("pgdown:%(n)d"),
         #"left <n> (word|words)": Key("c-left/3:%(n)d/10"),
@@ -264,11 +267,20 @@ grammarCfg.cmd.map = Item(
         "space [<n>]": release + Key("space:%(n)d"),
         "(enter|slap|slop) [<n>]": release + Key("enter:%(n)d"),
         "tab [<n>]": Key("tab:%(n)d"),
-        ###"delete [<n>]": Key("del/3:%(n)d"),
+        "delete [<n>]": Key("del/3:%(n)d"),
         "delete [this] line": Key("home, s-end, del"),  # @IgnorePep8
-        "backspace [<n>]": release + Key("backspace:%(n)d"),
+        "backs [<n>]": release + Key("backspace:%(n)d"),
         "application key": release + Key("apps/3"),
         "win key": release + Key("win/3"),
+        "switch one": release + Key("w-1/3"),
+        "switch two": release + Key("w-2/3"),
+        "switch three": release + Key("w-3/3"),
+        "switch four": release + Key("w-4/3"),
+        "switch five": release + Key("w-5/3"),
+        "switch six": release + Key("w-6/3"),
+        "switch seven": release + Key("w-7/3"),
+        "switch eight": release + Key("w-8/3"),
+        "switch nine": release + Key("w-9/3"),
         #"paste [that]": Function(paste_command),
         #"copy [that]": Function(copy_command),
         "cut [that]": release + Key("c-x/3"),
