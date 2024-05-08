@@ -268,8 +268,8 @@ grammarCfg.cmd.map = Item(
         #"right <n> (word|words)": Key("c-right/3:%(n)d/10"),
         "(homer|home)": Key("home"),
         "(sequel|end)": Key("end"),
-        "(topper|doc home)": Key("c-home/3"),
-        "(south|doc end)": Key("c-end/3"),
+        "(topper)": Key("c-home/3"),
+        "(bottom)": Key("c-end/3"),
         # Functional keys.
         "space": release + Key("space"),
         "space [<n>]": release + Key("space:%(n)d"),

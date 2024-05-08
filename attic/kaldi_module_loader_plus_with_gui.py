@@ -248,8 +248,25 @@ class App(threading.Thread):
 
 
         # ISSUE: if i click on the taskbar, the tkinter window disappears
+
         # initial quick attempts at bringing window back up top
-        # are located in the attic folder
+
+        # attempt:1 it didn't work
+        # def check_focus():
+        #     if self.root.focus_get() is None:  # If the window is not in focus
+        #         self.root.lift()  # Bring the window to the top
+        # self.root.after(100, check_focus)  # Check again after 100ms
+
+    #     self.root.after(100, check_focus)  # Start checking after 100ms
+
+        # attempt:2
+        #this didn't work
+        # def bring_to_front(event):
+        #     self.root.attributes('-topmost', 1)
+        #     self.root.after_idle(self.root.attributes, '-topmost', 0)
+
+        # # bring window back into focus
+        # self.root.bind('<F12>', bring_to_front)
 
 
         self.root.mainloop()
