@@ -127,7 +127,7 @@ letterMap = {
     "(charlie) ": "c",
     "(delta)": "d",
     "(echo)": "e",
-    "(foxtrot) ": "f",
+    "(foxtrot|fox) ": "f",
     "(golf) ": "g",
     "(hotel) ": "h",
     "(india|indigo) ": "i",
@@ -242,8 +242,16 @@ grammarCfg = Config("multi edit")
 grammarCfg.cmd = Section("Language section")
 grammarCfg.cmd.map = Item(
     {
-        # Mouse click key that executes mouse click from AutoHotkey script
-        "yep":  Key("c-f9"),
+        # Mouse
+        # "yep":  Key("c-f9"), mouse click from AutoHotkey script
+        "yep": Mouse("left"),
+        "yeah": Mouse("left:2"),
+        "triple": Mouse("left:3"),
+        "mid yep": Mouse("middle"),
+        "are yeah": Mouse("right"),
+        "drag": Mouse("left:down"),
+        "drop": Mouse("left:up"),
+        "pointer": Key("f11"), # enables pointer control in enable viacam
         # Navigation keys.
         "up [<n>]": Key("up:%(n)d"),
         "down [<n>]": Key("down:%(n)d"),

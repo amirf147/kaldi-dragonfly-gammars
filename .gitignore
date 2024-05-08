@@ -2,3 +2,4 @@
 kaldi_model*/*
 kaldi_tmp*/*
 config.py
+kaldi_module_loader_plus.py

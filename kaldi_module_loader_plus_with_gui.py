@@ -1,4 +1,11 @@
 
+"""
+original script: https://github.com/caspark/dragonfly-frons
+
+This version of the script has been further customized and personalized by
+Amir Farhadi to cater to his specific speech recognition needs. 
+"""
+
 import datetime
 import enum
 import logging
