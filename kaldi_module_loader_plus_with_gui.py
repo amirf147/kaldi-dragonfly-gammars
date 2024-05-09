@@ -337,13 +337,13 @@ def load_sleep_wake_grammar(initial_awake, notify_status):
 
     class SleepRule(MappingRule):
         mapping = {
-            "start listening": Function(wake)
+            "start dragon": Function(wake)
             + Function(lambda: get_engine().start_saving_adaptation_state()),
-            "stop listening": Function(
+            "stop dragon": Function(
                 lambda: get_engine().stop_saving_adaptation_state()
             )
             + Function(sleep),
-            "halt listening": Function(
+            "halt dragon": Function(
                 lambda: get_engine().stop_saving_adaptation_state()
             )
             + Function(sleep),

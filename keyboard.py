@@ -293,8 +293,9 @@ grammarCfg.cmd.map = Item(
         "win right": release + Key("w-right/3"),
         "win up": release + Key("w-up/3"),
         "win down": release + Key("w-down/3"),
+        "(system tray|sys tray)": release + Key("w-b/3"),
         "switchback": release + Key("a-tab/3"),
-        
+
         #"paste [that]": Function(paste_command),
         # "copy [that]": Function(copy_command),
         "cut [that]": release + Key("c-x/3"),
