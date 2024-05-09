@@ -336,19 +336,27 @@ def load_sleep_wake_grammar(initial_awake, notify_status):
         notify_status(AppStatus.READY)
 
     class SleepRule(MappingRule):
-        mapping = {
-            "start dragon": Function(wake)
-            + Function(lambda: get_engine().start_saving_adaptation_state()),
-            "stop dragon": Function(
-                lambda: get_engine().stop_saving_adaptation_state()
-            )
-            + Function(sleep),
-            "halt dragon": Function(
-                lambda: get_engine().stop_saving_adaptation_state()
-            )
-            + Function(sleep),
-        }
 
+        """
+        When the user says 'start listening', it triggers two actions:
+        1. Dragonfly enters sleep mode, halting its speech recognition.
+        2. A sleeping Windows Speech Recognition is activated.
+
+        When the user wants to switch from windows speech recognition to
+        dragonfly, they can say 'switch to dragon' which, from within windows
+        speech recognition, triggers the deactivation of windows 
+        recognition.
+        """
+        
+        mapping = {
+            "(start dragon|switch to dragon)":
+                Function(wake)
+                + Function(lambda: get_engine().start_saving_adaptation_state()),
+            "(stop dragon|start listening)":
+                Function(lambda: get_engine().stop_saving_adaptation_state())
+                + Function(sleep)
+        }
+        
     sleep_grammar.add_rule(SleepRule())
 
     sleep_noise_rule = MappingRule(
