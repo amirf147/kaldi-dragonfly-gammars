@@ -247,7 +247,7 @@ grammarCfg.cmd.map = Item(
         "yep": Mouse("left"),
         "yeah": Mouse("left:2"),
         "triple": Mouse("left:3"),
-        "mid yep": Mouse("middle"),
+        "middle yep": Mouse("middle"),
         "are yeah": Mouse("right"),
         "drag": Mouse("left:down"),
         "drop": Mouse("left:up"),
