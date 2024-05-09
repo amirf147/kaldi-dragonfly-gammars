@@ -1,6 +1,9 @@
 # kaldi-dragonfly-grammars
 
-#### Status Update: 09 May 2024
+#### Status Update: 09 May 2024 (10:25)
+It seems that it was just a python version issue. I just got it working with python version 3.10.5.
+
+#### Status Update: 09 May 2024 (09:35)
 I'm attempting to get Caster working. 
 Current error when trying to install via the batch file:
 ```
