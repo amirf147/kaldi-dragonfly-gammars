@@ -252,6 +252,13 @@ grammarCfg.cmd.map = Item(
         "drag": Mouse("left:down"),
         "drop": Mouse("left:up"),
         "pointer": Key("f11"), # enables pointer control in enable viacam
+
+        # temporary fixes for vscode scrolling
+        "roll up [<n>]": Key("c-up:%(n)d"),
+        "roll down [<n>]": Key("c-down:%(n)d"),
+        "rowley": Key("c-down:20"),
+        "rosey" : Key("c-up:20"),
+
         # Navigation keys.
         "up [<n>]": Key("up:%(n)d"),
         "down [<n>]": Key("down:%(n)d"),
