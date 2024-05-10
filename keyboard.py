@@ -57,8 +57,7 @@ specialCharMap = {
     "(star|asterisk)": "*",
     "colon": ":",
     "(semicolon|semi colon)": ";",
-    "at": "@",
-    "location": "@",
+    "at symbol": "@",
     "[double] quote": '"',
     "single quote": "'",
     "hash": "#",
@@ -286,6 +285,8 @@ grammarCfg.cmd.map = Item(
         "delete [this] line": Key("home, s-end, del"),  # @IgnorePep8
         "backs [<n>]": release + Key("backspace:%(n)d"),
         "application key": release + Key("apps/3"),
+
+        # Win keys
         "win key": release + Key("win/3"),
         "switch one": release + Key("w-1/3"),
         "switch two": release + Key("w-2/3"),
@@ -363,7 +364,7 @@ grammarCfg.cmd.map = Item(
         # 'care':        Key('home'),
         # '(doll|dole)': Key('end'),
         'chuck [<n>]':       Key('del:%(n)d'),
-        'scratch [<n>]':     Key('backspace:%(n)d'),
+        # 'scratch [<n>]':     Key('backspace:%(n)d'),
         #"visual": Key("v"),
         "visual line": Key("s-v"),
         "visual block": Key("c-v"),
@@ -374,8 +375,13 @@ grammarCfg.cmd.map = Item(
         # 'drop [<n>]':  Key('pgdown:%(n)d'),
 
         # 'lope [<n>]':  Key('c-left:%(n)d'),
+        'blush [<n>]':  Key('c-left:%(n)d'),
         # '(yope|rope) [<n>]':  Key('c-right:%(n)d'),
+        'jump [<n>]':  Key('c-right:%(n)d'),
         #'(hill scratch|hatch) [<n>]': Key('c-backspace:%(n)d'),
+        'scratch [<n>]': Key('c-backspace:%(n)d'),
+        'dear [<n>]': Key('c-delete:%(n)d'),
+
 
         'hexadecimal': Text("0x"),
         'suspend': Key('c-z'),
