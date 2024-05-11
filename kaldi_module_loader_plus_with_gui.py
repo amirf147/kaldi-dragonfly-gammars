@@ -17,7 +17,7 @@ import time
 from pathlib import Path
 from tkinter import messagebox, ttk
 
-from dragonfly import Dictation, FuncContext, Function, Grammar, MappingRule, get_engine
+from dragonfly import Dictation, FuncContext, Function, Grammar, MappingRule, get_engine, PlaySound
 from dragonfly.loader import CommandModuleDirectory
 from dragonfly.log import setup_log
 
@@ -327,6 +327,8 @@ def load_sleep_wake_grammar(initial_awake, notify_status):
             sleeping = True
             sleep_grammar.set_exclusiveness(True)
         notify_status(AppStatus.SLEEPING)
+        PlaySound("C:\Windows\Media\Windows Information Bar.wav").execute()
+        # PlaySound("C:\Windows\Media\Windows Balloon.wav").execute()
 
     def wake(force=False):
         global sleeping
@@ -334,7 +336,9 @@ def load_sleep_wake_grammar(initial_awake, notify_status):
             sleeping = False
             sleep_grammar.set_exclusiveness(False)
         notify_status(AppStatus.READY)
+        PlaySound("C:\Windows\Media\Windows Pop-up Blocked.wav").execute()
 
+   
     class SleepRule(MappingRule):
 
         """

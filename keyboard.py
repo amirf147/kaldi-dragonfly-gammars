@@ -260,7 +260,7 @@ grammarCfg.cmd.map = Item(
 
         # Navigation keys.
         "nurse [<n>]": Key("up:%(n)d"),
-        "down [<n>]": Key("down:%(n)d"),
+        "(down|drizzle) [<n>]": Key("down:%(n)d"),
         "left [<n>]": Key("left:%(n)d"),
         "right [<n>]": Key("right:%(n)d"),
         "(page up|moss) [<n>]": Key("pgup:%(n)d"),
