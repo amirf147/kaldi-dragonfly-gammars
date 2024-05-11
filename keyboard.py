@@ -259,7 +259,7 @@ grammarCfg.cmd.map = Item(
         "rosey" : Key("c-up:20"),
 
         # Navigation keys.
-        "up [<n>]": Key("up:%(n)d"),
+        "nurse [<n>]": Key("up:%(n)d"),
         "down [<n>]": Key("down:%(n)d"),
         "left [<n>]": Key("left:%(n)d"),
         "right [<n>]": Key("right:%(n)d"),
