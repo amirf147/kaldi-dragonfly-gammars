@@ -1,5 +1,8 @@
 # kaldi-dragonfly-grammars
 
+#### Status Update: 12 May 2024 
+Preparing a potential transition to using Caster exclusively with the creation of this repository: https://github.com/amirf147/caster-user-directory. I am still daily driving with just dragonfly and this grammar set as of now.
+
 #### Status Update: 09 May 2024 (10:25)
 It seems that it was just a python version issue. I just got Caster working with python version 3.10.5. 
 
