@@ -10,13 +10,11 @@ I initially would like to have most of the functionality from https://github.com
 ## Window Switching
 I use numbered win keys for window switching with the following
 modifications to the taskbar in Windows 10:
-    1. From windows settings app: Uncombined taskbar buttons
-    2. From windows settings app: Vertical taskbar on the right side
-    3. From windows settings app: Small taskbar buttons
-    4. Windhawk mod: "Disable grouping on the taskbar". This prevents
-       the thumbnail preview pop up when you press a windows key plus
-       a number
-    5. Taskbar size minimized using drag-to-resize
+- From windows settings app: Uncombined taskbar buttons
+- From windows settings app: Vertical taskbar on the right side
+- From windows settings app: Small taskbar buttons
+- Windhawk mod: "Disable grouping on the taskbar". This prevent the thumbnail preview pop up when you press a windows key plus a number
+- Taskbar size minimized using drag-to-resize
 
 ## attic
 
