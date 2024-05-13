@@ -279,14 +279,25 @@ grammarCfg.cmd.map = Item(
         # Functional keys.
         "space": release + Key("space"),
         "space [<n>]": release + Key("space:%(n)d"),
-        "(enter|slap|slop) [<n>]": release + Key("enter:%(n)d"),
+        "enter [<n>]": release + Key("enter:%(n)d"),
         "tab [<n>]": Key("tab:%(n)d"),
         "delete [<n>]": Key("del/3:%(n)d"),
         "delete [this] line": Key("home, s-end, del"),  # @IgnorePep8
         "backs [<n>]": release + Key("backspace:%(n)d"),
         "application key": release + Key("apps/3"),
 
-        # Win keys
+        # Window Switching
+        # I use numbered win keys for window switching with the following
+        # modifications to the taskbar in Windows 10:
+        #     1. From windows settings app: Uncombined taskbar buttons
+        #     2. From windows settings app: Vertical taskbar on the right side
+        #     3. From windows settings app: Small taskbar buttons
+        #     4. Windhawk mod: "Disable grouping on the taskbar". This prevents
+        #        the thumbnail preview pop up when you press a windows key plus
+        #        a number
+        #     5. Taskbar size minimized using drag-to-resize
+
+        # Win key switching with numbers
         "win key": release + Key("win/3"),
         "switch one": release + Key("w-1/3"),
         "switch two": release + Key("w-2/3"),
@@ -297,12 +308,27 @@ grammarCfg.cmd.map = Item(
         "switch seven": release + Key("w-7/3"),
         "switch eight": release + Key("w-8/3"),
         "switch nine": release + Key("w-9/3"),
+
+        # Negative numbered win keys
+        # Allows switching by counting from the end of the taskbar buttons.
+        "switch minus [one]": release + Key("w-b/3, s-tab/3, end, enter"),
+        "switch minus two": release + Key("w-b/3, s-tab/3, end, up, enter"),
+        "switch minus three": release + Key("w-b/3, s-tab/3, end, up:2, enter"),
+        "switch minus four": release + Key("w-b/3, s-tab/3, end, up:3, enter"),
+        "switch minus five": release + Key("w-b/3, s-tab/3, end, up:4, enter"),
+        "switch minus six": release + Key("w-b/3, s-tab/3, end, up:5, enter"),
+        "switch minus seven": release + Key("w-b/3, s-tab/3, end, up:6, enter"),
+        "switch minus eight": release + Key("w-b/3, s-tab/3, end, up:7, enter"),
+
         "win left": release + Key("w-left/3"),
         "win right": release + Key("w-right/3"),
         "win up": release + Key("w-up/3"),
         "win down": release + Key("w-down/3"),
+
         "(system tray|sys tray)": release + Key("w-b/3"),
         "switchback": release + Key("a-tab/3"),
+
+        "force close": release + Key("a-f4/3"),
 
         #"paste [that]": Function(paste_command),
         # "copy [that]": Function(copy_command),
