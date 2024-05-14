@@ -308,7 +308,6 @@ grammarCfg.cmd.map = Item(
         "switch seven": release + Key("w-7/3"),
         "switch eight": release + Key("w-8/3"),
         "switch nine": release + Key("w-9/3"),
-
         # Negative numbered win keys
         # Allows switching by counting from the end of the taskbar buttons.
         "switch minus [one]": release + Key("w-b/3, s-tab/3, end, enter"),
@@ -327,6 +326,12 @@ grammarCfg.cmd.map = Item(
 
         "(system tray|sys tray)": release + Key("w-b/3"),
         "switchback": release + Key("a-tab/3"),
+
+        # Window resizing
+        "resize [from] bottom": release + Key("a-space/5, s, down"),
+        "resize [from] top": release + Key("a-space/5, s, up"),
+        "resize [from] left": release + Key("a-space/5, s, left"),
+        "resize [from] right": release + Key("a-space/5, s, right"),
 
         "force close": release + Key("a-f4/3"),
 
