@@ -22,8 +22,8 @@ def undo_dictation():
 
 class DictationCommandRule(MappingRule):
     mapping = {
-        "(dictate | say) <dictation> [over]":   Function(lambda dictation: do_dictation(dictation)),
-        "(dictate | say) capital <dictation> [over]":   Function(lambda dictation: do_dictation(dictation.capitalize())),
+        "(dictate | say | just type) <dictation> [over]":   Function(lambda dictation: do_dictation(dictation)),
+        "(dictate | say | just type) capital <dictation> [over]":   Function(lambda dictation: do_dictation(dictation.capitalize())),
         "retry (dictate | say) <dictation> [over]":   Function(undo_dictation) + Function(lambda dictation: do_dictation(dictation)),
         "undo (dictate | dictation)": Function(undo_dictation),
         "action dictation mode": Function(lambda: dictation_mode.pump()),
