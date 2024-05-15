@@ -335,6 +335,10 @@ grammarCfg.cmd.map = Item(
 
         "force close": release + Key("a-f4/3"),
 
+        # Visual studio code
+        "pane increase [<n>]": release + Key("cs-i/3:%(n)d"),
+        "pane decrease [<n>]": release + Key("cs-o/3:%(n)d"),
+
         #"paste [that]": Function(paste_command),
         # "copy [that]": Function(copy_command),
         "cut [that]": release + Key("c-x/3"),

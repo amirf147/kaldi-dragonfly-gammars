@@ -77,15 +77,26 @@ class ProgramsRule(MappingRule):
         'tab new': Key('c-t'),
         'tab close': Key('c-w'),
         
-        "tab first": Key("c-1"),
-        "tab second": Key("c-2"),
-        "tab third": Key("c-3"),
-        "tab fourth": Key("c-4"),
-        "tab fifth": Key("c-5"),
-        "tab sixth": Key("c-6"),
-        "tab seventh": Key("c-7"),
-        "tab eighth": Key("c-8"),
-        "tab (last|ninth)": Key("c-9"),
+        # tab selection with numbers
+        "page first": Key("c-1"),
+        "page second": Key("c-2"),
+        "page third": Key("c-3"),
+        "page fourth": Key("c-4"),
+        "page fifth": Key("c-5"),
+        "page sixth": Key("c-6"),
+        "page seventh": Key("c-7"),
+        "page eighth": Key("c-8"),
+        "page (last|ninth|minus [one])": Key("c-9"),
+
+        # tab selection with negative numbers
+        "page minus two": Key("c-9, c-pgup"),
+        "page minus three": Key("c-9, c-pgup:2"),
+        "page minus four": Key("c-9, c-pgup:3"),
+        "page minus five": Key("c-9, c-pgup:4"),
+        "page minus six": Key("c-9, c-pgup:5"),
+        "page minus seven": Key("c-9, c-pgup:6"),
+        "page minus eight": Key("c-9, c-pgup:7"),
+        "page minus nine": Key("c-9, c-pgup:8"),
 
         # Xfce-like desktop environment commands
         '(desk|desktop) left [<n>]': Key('ca-left:%(n)d'),
