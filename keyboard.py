@@ -324,8 +324,10 @@ grammarCfg.cmd.map = Item(
         "win up": release + Key("w-up/3"),
         "win down": release + Key("w-down/3"),
 
+        "language input": Key("w-space"),
         "(system tray|sys tray)": release + Key("w-b/3"),
         "switchback": release + Key("a-tab/3"),
+        "context menu": Key("s-f10"),
 
         # Window resizing
         "resize [from] bottom": release + Key("a-space/5, s, down"),
@@ -338,8 +340,17 @@ grammarCfg.cmd.map = Item(
         # Visual studio code
         "pane increase [<n>]": release + Key("cs-i/3:%(n)d"),
         "pane decrease [<n>]": release + Key("cs-o/3:%(n)d"),
+        "show preview": Key("c-k/3, v"),
+        "show files": Key("cs-e"),
+        "hide left": Key("c-b"),
+        "commander": Key("cs-p"),
+        "move panel right": Key("cs-9"),
+        "move panel bottom": Key("cs-3"),
+        "keyboard shortcuts": Key("c-k/3, c-s"),
+        "clarify": Key("c-k/3, c-i"),
+        "focus terminal": Key("c-backtick"),
 
-        #"paste [that]": Function(paste_command),
+        # "paste [that]": Function(paste_command),
         # "copy [that]": Function(copy_command),
         "cut [that]": release + Key("c-x/3"),
         "copy [that]": release + Key("c-c/3"),
@@ -410,9 +421,9 @@ grammarCfg.cmd.map = Item(
         # 'drop [<n>]':  Key('pgdown:%(n)d'),
 
         # 'lope [<n>]':  Key('c-left:%(n)d'),
-        'blush [<n>]':  Key('c-left:%(n)d'),
+        'blush [<n>]': Key('c-left:%(n)d'),
         # '(yope|rope) [<n>]':  Key('c-right:%(n)d'),
-        'jump [<n>]':  Key('c-right:%(n)d'),
+        'jump [<n>]': Key('c-right:%(n)d'),
         #'(hill scratch|hatch) [<n>]': Key('c-backspace:%(n)d'),
         'scratch [<n>]': Key('c-backspace:%(n)d'),
         'dear [<n>]': Key('c-delete:%(n)d'),
