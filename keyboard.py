@@ -69,7 +69,7 @@ specialCharMap = {
     "plus sign": "+",
     "space": " ",
 
-    "exclamation point": "!",
+    "exclamation [mark]": "!",
     "question": "?",
     "caret": "^",
     # some other symbols I haven't imported yet, lazy sorry
