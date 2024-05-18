@@ -14,6 +14,7 @@ modifications to the taskbar in Windows 10:
 - From windows settings app: Vertical taskbar on the right side
 - From windows settings app: Small taskbar buttons
 - Windhawk mod: "Disable grouping on the taskbar". This prevent the thumbnail preview pop up when you press a windows key plus a number
+- Zero pinned items on the taskbar
 - Taskbar size minimized using drag-to-resize
 
 ## attic
