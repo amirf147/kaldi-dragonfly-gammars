@@ -250,6 +250,8 @@ class App(threading.Thread):
         # ISSUE: if i click on the taskbar, the tkinter window disappears
         # initial quick attempts at bringing window back up top
         # are located in the attic folder
+        
+        # ISSUE UPDATE: is just hiding underneath the task bar
 
 
         self.root.mainloop()
