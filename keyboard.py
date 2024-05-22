@@ -65,7 +65,7 @@ specialCharMap = {
     "percent": "%",
     "ampersand": "&",
     "slash": "/",
-    "equal": "=",
+    "equals [sign]": "=",
     "plus sign": "+",
     "space": " ",
 
