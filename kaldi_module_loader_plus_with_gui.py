@@ -446,6 +446,8 @@ def main():
 
     # Call connect() now that the engine configuration is set.
     engine.connect()
+    engine.print_mic_list()
+
 
     # Load grammars.
     load_sleep_wake_grammar(initial_awake=True, notify_status=notify_status)
