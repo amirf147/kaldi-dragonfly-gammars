@@ -350,6 +350,7 @@ grammarCfg.cmd.map = Item(
         "clarify": Key("c-k/3, c-i"),
         "focus terminal": Key("c-backtick"),
 
+        "flash": Key("f2"),
         # "paste [that]": Function(paste_command),
         # "copy [that]": Function(copy_command),
         "cut [that]": release + Key("c-x/3"),
