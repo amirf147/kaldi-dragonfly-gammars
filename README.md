@@ -17,6 +17,8 @@ modifications to the taskbar in Windows 10:
 - Zero pinned items on the taskbar
 - Taskbar size minimized using drag-to-resize
 
+![alt text](https://github.com/amirf147/kaldi-dragonfly-gammars/blob/main/images/vertical_taskbar.png "vertical taskbar")
+
 ## attic
 
 This directory contains code that i am still working on or maybe some leftover/failed experimentation. It is not meant to be run. It is more for just reference so I can remember what I did/tried.
