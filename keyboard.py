@@ -259,8 +259,8 @@ grammarCfg.cmd.map = Item(
         "rosey" : Key("c-up:20"),
 
         # Navigation keys.
-        "nurse [<n>]": Key("up:%(n)d"),
-        "(down|drizzle) [<n>]": Key("down:%(n)d"),
+        "sauce [<n>]": Key("up:%(n)d"),
+        "dunce [<n>]": Key("down:%(n)d"),
         "left [<n>]": Key("left:%(n)d"),
         "right [<n>]": Key("right:%(n)d"),
         "(page up|moss) [<n>]": Key("pgup:%(n)d"),
@@ -348,7 +348,7 @@ grammarCfg.cmd.map = Item(
         "move panel bottom": Key("cs-3"),
         "keyboard shortcuts": Key("c-k/3, c-s"),
         "clarify": Key("c-k/3, c-i"),
-        "focus terminal": Key("c-backtick"),
+        "(focus terminal|shell)": Key("c-backtick"),
 
         "flash": Key("f2"),
         "focus": Key("f6"),
