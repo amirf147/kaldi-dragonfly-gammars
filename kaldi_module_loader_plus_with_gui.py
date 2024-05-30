@@ -355,7 +355,7 @@ def load_sleep_wake_grammar(initial_awake, notify_status):
         """
         
         mapping = {
-            "(start dragon|switch to dragon)":
+            "start dragon":
                 Function(wake)
                 + Function(lambda: get_engine().start_saving_adaptation_state()),
             "(stop dragon|start listening)":
