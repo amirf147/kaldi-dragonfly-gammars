@@ -33,3 +33,10 @@ Current error when trying to install via the batch file:
 ```
 I do have the appropriate visual studio build tools installed.. I did try a bunch of other things too which I might document later. This is just a quick update.
 
+## 06 May 2024
+
+I'm currently developing a custom grammar/rule set, starting from https://github.com/daanzu/kaldi-grammar-simple.git and incorporating the GUI from https://github.com/caspark/dragonfly-frons.git. 
+
+I am also thinking of just moving to exclusively use Caster. My customization for that will be at this repository: https://github.com/amirf147/caster-user-directory
+
+I initially would like to have most of the functionality from https://github.com/amirf147/wsrmacros set up. 

@@ -1,14 +1,11 @@
 # kaldi-dragonfly-grammars
-## Current Status and Plans (06 May 2024)
 
-I'm currently developing a custom grammar/rule set, starting from https://github.com/daanzu/kaldi-grammar-simple.git and incorporating the GUI from https://github.com/caspark/dragonfly-frons.git. 
-
-I am also thinking of just moving to exclusively use Caster. My customization for that will be at this repository: https://github.com/amirf147/caster-user-directory
-
-I initially would like to have most of the functionality from https://github.com/amirf147/wsrmacros set up. 
+## Current Status: 01 June 2024
+I have shifted my development focus to: https://github.com/amirf147/caster-user-directory-and-notes
+I am now using caster fulltime from my computer control needs.
 
 ## Window Switching
-I use numbered win keys for window switching with the following
+I use numbered and negative numbered windows keys for window switching with the following
 modifications to the taskbar in Windows 10:
 - From windows settings app: Never combine taskbar buttons
 - From windows settings app: Vertical taskbar on the right side
